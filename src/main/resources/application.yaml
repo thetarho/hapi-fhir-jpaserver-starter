@@ -19,8 +19,8 @@ spring:
     url: jdbc:postgresql://127.0.0.1:5432/hapi_r4
     #username: sa
     #password: null
-    username: postgres
-    password: postgres
+    username: tradmin
+    password: tradmin
     #driverClassName: org.h2.Driver
     driverClassName: org.postgresql.Driver
     max-active: 15
