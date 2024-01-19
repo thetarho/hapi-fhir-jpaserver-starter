@@ -14,11 +14,15 @@ spring:
     check-location: false
     baselineOnMigrate: true
   datasource:
-    url: 'jdbc:h2:file:./target/database/h2'
+    #url: 'jdbc:h2:file:./target/database/h2'
     #url: jdbc:h2:mem:test_mem
-    username: sa
-    password: null
-    driverClassName: org.h2.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/hapi_r4
+    #username: sa
+    #password: null
+    username: postgres
+    password: postgres
+    #driverClassName: org.h2.Driver
+    driverClassName: org.postgresql.Driver
     max-active: 15
 
     # database connection pool size
@@ -32,7 +36,8 @@ spring:
       #Hibernate dialect is automatically detected except Postgres and H2.
       #If using H2, then supply the value of ca.uhn.fhir.jpa.model.dialect.HapiFhirH2Dialect
       #If using postgres, then supply the value of ca.uhn.fhir.jpa.model.dialect.HapiFhirPostgres94Dialect
-      hibernate.dialect: ca.uhn.fhir.jpa.model.dialect.HapiFhirH2Dialect
+      hibernate.dialect: ca.uhn.fhir.jpa.model.dialect.HapiFhirPostgres94Dialect
+  #      hibernate.dialect: ca.uhn.fhir.jpa.model.dialect.HapiFhirH2Dialect
   #      hibernate.hbm2ddl.auto: update
   #      hibernate.jdbc.batch_size: 20
   #      hibernate.cache.use_query_cache: false
